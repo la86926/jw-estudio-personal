@@ -1,0 +1,276 @@
+
+/* Refinamiento de lectura y tarjetas bíblicas */
+.learning-path,
+.block-heading{display:none!important}
+
+.section-intro{
+  margin:4px 0 18px;
+  padding:16px 17px;
+  border-radius:16px;
+  background:#f3f7fb;
+  border:1px solid #e7edf4;
+  color:#50545a;
+  line-height:1.62;
+}
+
+.verse-group{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid rgba(29,29,31,.07);
+}
+.verse-group>h3{
+  margin:0 0 11px;
+  font-size:.92rem;
+  color:#565b63;
+  letter-spacing:-.01em;
+}
+.verse-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.verse-chip{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  border:1px solid #dfe8f1!important;
+  background:#eef4fa!important;
+  background-image:none!important;
+  color:#3e6288!important;
+  padding:8px 11px!important;
+  border-radius:11px!important;
+  box-shadow:none!important;
+  font-size:.86rem!important;
+  font-weight:600!important;
+  line-height:1.25;
+  letter-spacing:-.01em;
+  transition:background-color .16s ease,transform .12s ease,border-color .16s ease!important;
+}
+.verse-chip:hover,
+.verse-chip:focus-visible{
+  background:#e6eff8!important;
+  border-color:#d5e2ef!important;
+  transform:none!important;
+  box-shadow:none!important;
+  outline:none;
+}
+.verse-chip:active{
+  background:#dde9f5!important;
+  transform:scale(.98)!important;
+}
+
+/* Mapa mental visible: no requiere interacción */
+.topic-map{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr) 22px minmax(0,1fr) 22px minmax(0,1fr) 22px minmax(0,1fr);
+  gap:8px;
+  align-items:stretch;
+  margin-top:14px;
+  width:100%;
+  min-width:0;
+}
+.map-step{
+  min-width:0;
+  padding:15px 14px;
+  border-radius:16px;
+  border:1px solid rgba(29,29,31,.05);
+  box-shadow:0 4px 14px rgba(31,35,41,.035);
+}
+.map-step strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:.91rem;
+  line-height:1.28;
+  color:#33373d;
+}
+.map-step p{
+  margin:0;
+  color:#646970;
+  font-size:.81rem;
+  line-height:1.48;
+}
+.map-step.blue{background:#eaf3fd}
+.map-step.mint{background:#eaf7f1}
+.map-step.lavender{background:#f1edfa}
+.map-step.rose{background:#faecef}
+.map-step.amber{background:#fbf3df}
+.map-arrow{
+  align-self:center;
+  justify-self:center;
+  color:#9aa4af;
+  font-size:1.08rem;
+  font-weight:700;
+}
+
+/* Bloques de ideas simples, con lenguaje del programa */
+.plain-steps{
+  display:grid;
+  gap:9px;
+  margin-top:14px;
+}
+.plain-step{
+  display:grid;
+  gap:4px;
+  padding:12px 13px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid rgba(29,29,31,.07);
+}
+.plain-step strong{
+  color:#3f444a;
+  font-size:.92rem;
+  letter-spacing:-.01em;
+}
+.plain-step span{
+  color:#666b72;
+  font-size:.86rem;
+  line-height:1.52;
+}
+.source-card>h3{margin-bottom:12px}
+
+/* Tarjetas bíblicas flotantes e independientes */
+.floating-verse-card{
+  position:fixed;
+  z-index:300;
+  width:min(310px,calc(100vw - 24px));
+  min-width:0;
+  padding:12px 13px 13px;
+  border-radius:24px;
+  background:rgba(252,252,253,.94);
+  -webkit-backdrop-filter:blur(24px) saturate(145%);
+  backdrop-filter:blur(24px) saturate(145%);
+  border:1px solid rgba(255,255,255,.96);
+  box-shadow:
+    0 22px 54px rgba(44,55,72,.18),
+    0 0 0 1px rgba(99,119,145,.07);
+  color:#1d1d1f;
+  touch-action:none;
+  cursor:grab;
+  overflow-wrap:anywhere;
+  animation:floatCardIn .18s ease;
+}
+.floating-verse-card.dragging{
+  cursor:grabbing;
+  box-shadow:
+    0 28px 70px rgba(44,55,72,.22),
+    0 0 0 1px rgba(99,119,145,.08);
+}
+.floating-handle{
+  width:34px;
+  height:4px;
+  margin:0 auto 8px;
+  border-radius:999px;
+  background:#d5d8dd;
+}
+.floating-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+.floating-label{
+  display:block;
+  margin-bottom:2px;
+  color:#7a8490;
+  font-size:.61rem;
+  font-weight:700;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.floating-head h3{
+  margin:0;
+  color:#22262a;
+  font-size:1rem;
+  line-height:1.24;
+  letter-spacing:-.02em;
+}
+.floating-close{
+  appearance:none;
+  -webkit-appearance:none;
+  flex:0 0 auto;
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  border:0;
+  border-radius:50%;
+  background:#eceef1;
+  color:#646a72;
+  font-size:1.05rem;
+  line-height:1;
+  cursor:pointer;
+}
+.floating-close:active{background:#e1e4e8}
+.floating-text{
+  margin-top:10px;
+  padding:11px 12px;
+  border-radius:16px;
+  background:#f5f7f9;
+  border:1px solid #eceff2;
+  color:#34383d;
+  font-size:.88rem;
+  line-height:1.52;
+  white-space:pre-wrap;
+}
+.floating-note{
+  margin:8px 2px 0;
+  color:#767c84;
+  font-size:.72rem;
+  line-height:1.4;
+}
+@keyframes floatCardIn{
+  from{opacity:0;transform:translateY(8px) scale(.985)}
+  to{opacity:1;transform:none}
+}
+
+/* Mantiene visible la sección que se está leyendo */
+.reading-indicator{
+  border-radius:12px!important;
+  background:rgba(248,250,252,.92)!important;
+  border-color:#e7ebef!important;
+}
+
+@media(max-width:900px){
+  .topic-map{
+    grid-template-columns:1fr;
+    gap:7px;
+  }
+  .map-arrow{
+    transform:rotate(90deg);
+    height:18px;
+    line-height:18px;
+  }
+}
+
+@media(max-width:680px){
+  .section-intro{
+    margin-bottom:13px;
+    padding:14px;
+    border-radius:14px;
+  }
+  .verse-chips{gap:7px}
+  .verse-chip{
+    padding:8px 10px!important;
+    border-radius:10px!important;
+    font-size:.84rem!important;
+  }
+  .map-step{
+    padding:13px;
+    border-radius:14px;
+  }
+  .plain-step{
+    padding:11px 12px;
+    border-radius:13px;
+  }
+  .floating-verse-card{
+    width:min(292px,calc(100vw - 20px));
+    padding:10px 11px 12px;
+    border-radius:22px;
+  }
+  .floating-text{
+    margin-top:8px;
+    padding:10px 11px;
+    border-radius:15px;
+    font-size:.86rem;
+    line-height:1.48;
+  }
+}
