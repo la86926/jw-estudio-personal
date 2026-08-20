@@ -14,7 +14,7 @@
 
   const hero=$('.hero');
   if(hero){
-    hero.innerHTML='<div class="hero-card"><span class="hero-kicker">Estudio personal</span><h1 id="hero-title">Programa especial sobre la familia</h1><p class="hero-guide">Selecciona una de las 6 secciones para comenzar.</p></div>';
+    hero.innerHTML='<div class="hero-card"><span class="hero-kicker">Estudio personal</span><h1 id="hero-title">Programa especial sobre la familia</h1></div>';
   }
 
   $$('.note').forEach(n=>{
@@ -23,36 +23,36 @@
   });
 
   const summaries={
-    1:'La familia forma parte del propósito de Jehová. Él creó una familia celestial, preparó la Tierra para la familia humana y nos enseña cómo protegerla de lo que puede debilitarla.',
-    2:'Ruth y Noemí muestran que una familia real no depende de su tamaño ni solamente de los lazos de sangre. La congregación puede convertirse en una verdadera familia espiritual.',
-    3:'La adoración en familia puede ser divertida e instructiva. La clave es pensar en lo que cada uno necesita, tener en cuenta su edad y sus gustos, y no complicarse demasiado.',
+    1:'La familia forma parte del propósito de Jehová. Él creó una familia celestial, preparó la Tierra para la familia humana y nos enseña cómo protegerla.',
+    2:'Rut y Noemí muestran que una familia real no depende de su tamaño ni solamente de los lazos de sangre. La congregación también puede ser una verdadera familia.',
+    3:'La adoración en familia puede ser divertida e instructiva. El programa destaca la importancia de pensar en las necesidades, la edad y los gustos de cada miembro de la familia.',
     4:'Sarah, Abenezer y Sophie pasaron por problemas distintos. Los tres meditaron en la Biblia, conocieron mejor a Jehová y llegaron a verlo como un Padre cercano.',
-    5:'Gary Breaux explica qué podemos hacer cuando parece imposible recuperar la paz en la familia. Para ello repasa lo que hizo Jacob con Esaú y saca seis lecciones.',
-    6:'Sofonías enseña que Jehová quiere que estemos cerca de él y que valora nuestros esfuerzos. El programa también muestra cómo puede ayudarnos cuando perdemos a alguien que queremos.'
+    5:'Gary Breaux explica qué se puede hacer cuando parece imposible que haya paz en la familia. El relato de Jacob y Esaú deja seis lecciones prácticas.',
+    6:'Sofonías muestra que Jehová quiere que estemos cerca de él y que valora nuestros esfuerzos. El programa también presenta experiencias de jóvenes que recibieron consuelo después de perder a seres queridos.',
+    7:'La videopostal presenta Chipre, la llegada de las buenas noticias a la isla y el crecimiento de la predicación desde 1924 hasta la actualidad.'
   };
 
-  // Contenido fiel al orden y al lenguaje de la transcripción.
   const s1=$('#seccion-1');
   if(s1){
     const mm=$('.mindmap',s1);
     if(mm){
       const card=mm.closest('.interactive-card');
       const heading=$('h3',card);
-      const lead=$('p',card);
-      if(heading) heading.textContent='Cómo encaja todo';
-      if(lead) lead.textContent='Este mapa resume el hilo que sigue el programa. No tienes que tocar nada: léelo de izquierda a derecha.';
+      const lead=$(':scope > p',card);
+      if(heading) heading.textContent='Resumen';
+      if(lead) lead.textContent='Este mapa resume el hilo que sigue el programa.';
       const map=d.createElement('div');
       map.className='topic-map';
       map.innerHTML=`
-        <div class="map-step blue"><strong>Jehová crea una familia celestial</strong><p>Jesús y los ángeles forman parte de la familia celestial de Jehová.</p></div>
+        <div class="map-step blue"><strong>La familia celestial</strong><p>Jehová creó a Jesús y, por medio de él, a los ángeles que forman su familia celestial.</p></div>
         <span class="map-arrow" aria-hidden="true">→</span>
-        <div class="map-step mint"><strong>Prepara la Tierra</strong><p>Durante los días creativos prepara un hogar para la familia humana.</p></div>
+        <div class="map-step mint"><strong>La Tierra</strong><p>Durante los días creativos, Jehová preparó un hogar para la familia humana.</p></div>
         <span class="map-arrow" aria-hidden="true">→</span>
-        <div class="map-step lavender"><strong>Crea a la primera pareja</strong><p>Al final del sexto día creativo crea al hombre y a la mujer.</p></div>
+        <div class="map-step lavender"><strong>La primera pareja</strong><p>Al final del sexto día creativo creó al hombre y a la mujer.</p></div>
         <span class="map-arrow" aria-hidden="true">→</span>
-        <div class="map-step rose"><strong>Satanás intenta debilitar la familia</strong><p>El programa muestra ataques directos y otros más sutiles que pueden dividirla.</p></div>
+        <div class="map-step rose"><strong>Ataques a la familia</strong><p>Satanás intenta debilitarla con ataques directos y también aprovechándose de las imperfecciones y las emociones.</p></div>
         <span class="map-arrow" aria-hidden="true">→</span>
-        <div class="map-step amber"><strong>La protegemos poniendo en práctica la Biblia</strong><p>No basta con saber el camino: hay que andar en él.</p></div>`;
+        <div class="map-step amber"><strong>Cómo protegerla</strong><p>Confiar en Jehová y poner en práctica lo que enseña la Biblia.</p></div>`;
       mm.replaceWith(map);
       $('.mind-detail',s1)?.remove();
     }
@@ -63,10 +63,10 @@
     const loyalty=$('.loyalty-card',s2);
     if(loyalty){
       loyalty.innerHTML=`
-        <h3>Ruth y Noemí: una familia de verdad</h3>
-        <p>Rut podía volver con sus familiares en Moab, pero decidió quedarse con Noemí. El programa usa ese relato para explicar qué significa ser familia.</p>
+        <h3>Resumen</h3>
+        <p>Rut podía volver con sus familiares en Moab, pero decidió quedarse con Noemí. El relato muestra que una familia real no depende solamente del parentesco ni de cuántas personas la formen.</p>
         <div class="plain-steps">
-          <div class="plain-step"><strong>Una familia puede ser pequeña</strong><span>Rut y Noemí seguían siendo una familia real aunque no tuvieran la estructura que muchos imaginan.</span></div>
+          <div class="plain-step"><strong>Una familia puede ser pequeña</strong><span>Rut y Noemí seguían siendo una familia real.</span></div>
           <div class="plain-step"><strong>Nos cuidamos unos a otros</strong><span>Los siervos de Jehová pueden dar cariño, amor y cuidado a quienes lo necesitan.</span></div>
           <div class="plain-step"><strong>La congregación también es familia</strong><span>Jesús explicó que sus seguidores recibirían hermanos, hermanas y madres dentro de la familia espiritual.</span></div>
           <div class="plain-step"><strong>No hagamos grupos cerrados</strong><span>El programa anima a tratar a la congregación como familia y a no dejar a otros fuera.</span></div>
@@ -74,12 +74,17 @@
     }
     const cards=$$('.grid-2 > .interactive-card',s2);
     if(cards[1]){
-      const h=$('h3',cards[1]),p=$(':scope > p',cards[1]);
+      const h=$('h3',cards[1]);
+      const p=$(':scope > p',cards[1]);
       if(h) h.textContent='Preguntas para pensar';
-      if(p) p.textContent='Toca una tarjeta y piensa cómo puedes cuidar mejor a tu familia espiritual.';
-      $$('.flash-face small',cards[1]).forEach((x,i)=>x.textContent=i%2===0?'Para pensar':'Piensa en esto');
-      $$('.flash-face span',cards[1]).forEach(x=>{
-        x.textContent=x.closest('.flash-front')?'Toca para ver otra pregunta':'Toca para volver';
+      if(p) p.remove();
+      const faces=$$('.flash-face',cards[1]);
+      faces.forEach((face,i)=>{
+        const small=$('small',face);
+        const hint=$('span',face);
+        if(small) small.textContent=i%2===0?'Pregunta':'Otra pregunta';
+        if(hint) hint.remove();
+        if(face.classList.contains('flash-back')) face.classList.add('question-back');
       });
     }
   }
@@ -88,25 +93,91 @@
   if(s3){
     const cards=$$('.grid-2 > .interactive-card',s3);
     if(cards[0]){
-      const h=$('h3',cards[0]),p=$(':scope > p',cards[0]);
-      if(h) h.textContent='Prepara una adoración en familia sencilla';
-      if(p) p.textContent='Piensa primero en qué necesita tu familia y en qué les gusta hacer. No hace falta preparar una superproducción.';
+      const h=$('h3',cards[0]);
+      const p=$(':scope > p',cards[0]);
+      if(h) h.textContent='Plan de adoración en familia';
+      if(p) p.remove();
+
+      const need=$('#need',cards[0]);
+      const needField=need?.closest('.field');
+      if(needField && !$('.example-set',needField)){
+        const examples=d.createElement('div');
+        examples.className='example-set';
+        examples.innerHTML=`
+          <span class="example-label">Ejemplos</span>
+          <div class="example-chips">
+            <button type="button" class="example-chip">Resistir la presión de grupo</button>
+            <button type="button" class="example-chip">Aprender a concentrarse mejor</button>
+            <button type="button" class="example-chip">Mejorar en la predicación</button>
+            <button type="button" class="example-chip">Hablar de temas que les cuesta expresar</button>
+            <button type="button" class="example-chip">Conocer mejor a Jehová y a Jesús</button>
+          </div>`;
+        needField.append(examples);
+        $$('.example-chip',examples).forEach(btn=>btn.addEventListener('click',()=>{
+          if(need) need.value=btn.textContent;
+        }));
+      }
+
+      const video=$('#video',cards[0]);
+      if(video){
+        video.placeholder='Ej.: Las buenas noticias según Jesús';
+        const field=video.closest('.field');
+        if(field && !$('.field-note',field)){
+          const note=d.createElement('small');
+          note.className='field-note';
+          note.textContent='Título de un video relacionado con el tema de la adoración en familia.';
+          field.append(note);
+        }
+      }
     }
+
     if(cards[1]){
-      const h=$('h3',cards[1]),p=$(':scope > p',cards[1]);
-      if(h) h.textContent='Ideas que dieron otras familias';
-      if(p) p.textContent='Estas son algunas ideas que aparecen en el video.';
+      const h=$('h3',cards[1]);
+      const p=$(':scope > p',cards[1]);
+      if(h) h.textContent='Experiencias';
+      if(p) p.remove();
+      cards[1].classList.add('media-card');
+
       const data=[
-        ['Contemplar las estrellas','Su papá los llevaba a ver las estrellas y hablaban de las constelaciones que veía Job. Eso ayudó a Deborah a conocer mejor a Jehová.'],
-        ['Hacer que la oración sea real','Sandra recuerda que lo aprendido sobre el universo hizo que la oración se sintiera mucho más real para ella. También recuerda cuánto se reían juntos.'],
-        ['Practicar situaciones y proponer temas','Los padres de Cyrus hacían juegos para practicar situaciones difíciles. Él también sugería temas y sentía que aportaba su granito de arena.'],
-        ['Pensar en cada hijo','Jackie tiene hijos de distintas edades y formas de aprender, así que busca temas que les interesen y que les ayuden a aprender mientras se divierten.'],
-        ['No limitarse a ver videos','Rubén explica que no se trata solo de ver un video, sino de detenerse, conversar, aprender y buscar algo que puedan poner en práctica.']
+        ['Deborah','Contemplar las estrellas','Su papá los llevaba a ver las estrellas y hablaban de las constelaciones que veía Job. Eso la ayudó a conocer mejor a Jehová.'],
+        ['Sandra','La oración','Lo aprendido sobre el universo hizo que la oración se sintiera mucho más real para ella. También recuerda cuánto se reían juntos.'],
+        ['Cyrus','Conversar y practicar','Sus padres apartaban tiempo para conversar y hacían juegos para practicar situaciones difíciles. Él también proponía temas.'],
+        ['Jackie','Pensar en cada hijo','Busca temas que interesen a sus hijos porque tienen distintas edades y cada uno aprende de una manera diferente.'],
+        ['Rubén','Aprovechar los videos','Explica que no se trata solo de ver un video, sino de pausarlo, conversar, aprender y buscar algo que puedan poner en práctica.']
       ];
+
+      const carousel=$('.carousel',cards[1]);
+      if(carousel){
+        carousel.classList.add('media-carousel');
+        if(!$('.media-status',cards[1])){
+          const status=d.createElement('div');
+          status.className='media-status';
+          status.innerHTML='<span class="media-mark" aria-hidden="true">▶</span><strong>Experiencias</strong><span id="media-count">1 de 5</span>';
+          carousel.before(status);
+        }
+      }
+
       $$('.testimonial-card',cards[1]).forEach((card,i)=>{
-        const h3=$('h3',card),p=$('p',card);
-        if(data[i]&&h3&&p){h3.textContent=data[i][0];p.textContent=data[i][1];}
+        const eyebrow=$('.eyebrow',card);
+        const h3=$('h3',card);
+        const p=$('p',card);
+        if(data[i]){
+          if(eyebrow) eyebrow.textContent=data[i][0];
+          if(h3) h3.textContent=data[i][1];
+          if(p) p.textContent=data[i][2];
+        }
       });
+
+      const updateMediaCount=()=>{
+        const dots=$$('#carousel-dots .dot');
+        let index=dots.findIndex(dot=>dot.classList.contains('active'));
+        if(index<0) index=0;
+        const counter=$('#media-count');
+        if(counter) counter.textContent=`${index+1} de ${Math.max(1,dots.length)}`;
+      };
+      $('#prev-slide')?.addEventListener('click',()=>setTimeout(updateMediaCount,0));
+      $('#next-slide')?.addEventListener('click',()=>setTimeout(updateMediaCount,0));
+      setTimeout(updateMediaCount,0);
     }
   }
 
@@ -140,6 +211,21 @@
 
   const s5=$('#seccion-5');
   if(s5){
+    const card=$('.interactive-card',s5);
+    const h=$('h3',card);
+    if(h) h.textContent='6 lecciones para recuperar la paz en la familia';
+
+    const filterBar=$('.filter-bar',s5);
+    if(filterBar && !$('.filter-caption',s5)){
+      const label=d.createElement('div');
+      label.className='filter-caption';
+      label.textContent='Categorías';
+      filterBar.before(label);
+    }
+    const all=$('.filter-btn[data-filter="all"]',s5);
+    if(all) all.classList.add('filter-all');
+    $$('.filter-btn:not([data-filter="all"])',s5).forEach(b=>b.classList.add('filter-category'));
+
     const lessons=[
       ['Dar tiempo','Para que se calmen los ánimos, puede que tenga que pasar tiempo. No se puede obligar a nadie a hacer las paces.'],
       ['Centrarnos en hacer la voluntad de Jehová','Jacob aprovechó esos años para hacer la voluntad de Jehová. Nosotros podemos hacer lo mismo mientras esperamos.'],
@@ -160,58 +246,83 @@
     if(grid){
       grid.innerHTML=`
         <article class="interactive-card source-card">
-          <h3>Sofonías: Jehová quiere que estemos cerca de él</h3>
+          <h3>Sofonías</h3>
           <div class="plain-steps">
-            <div class="plain-step"><strong>Buscar a Jehová es ser su amigo</strong><span>El programa explica que no se trata solo de llenar la mente de datos, sino de conocer su modo de pensar y de sentir.</span></div>
-            <div class="plain-step"><strong>Sofonías 3:17 muestra cuánto le importamos</strong><span>La nota que se consulta en el video dice: “tranquilo, en paz, satisfecho”.</span></div>
-            <div class="plain-step"><strong>Si alguna vez te sientes invisible</strong><span>La conversación entre el padre y el hijo recuerda que Jehová se fija en quienes lo buscan y valora su fidelidad.</span></div>
+            <div class="plain-step"><strong>Buscar a Jehová</strong><span>El programa explica que significa forjar y conservar una estrecha relación personal con él y conocer su modo de pensar y de sentir.</span></div>
+            <div class="plain-step"><strong>Sofonías 3:17</strong><span>La nota que se consulta en el video dice “tranquilo, en paz, satisfecho”. La expresión muestra lo profundos que son los sentimientos de Jehová por quienes se acercan a él.</span></div>
+            <div class="plain-step"><strong>Cuando alguien se siente invisible</strong><span>La dramatización recuerda que Jehová ve la fidelidad de sus siervos y valora sus esfuerzos.</span></div>
           </div>
         </article>
         <article class="interactive-card source-card">
-          <h3>¿Qué les ayudó cuando perdieron a un ser querido?</h3>
+          <h3>Cómo sobrellevar el dolor</h3>
           <div class="plain-steps">
             <div class="plain-step"><strong>Abrirse con otros</strong><span>Harman explica que la congregación se convirtió en su familia y que ayuda contar cómo uno se siente.</span></div>
             <div class="plain-step"><strong>Orar y desahogarse</strong><span>Jugraj llamó a la oración su “salvavidas”. Brianne contó a Jehová exactamente cómo se sentía.</span></div>
-            <div class="plain-step"><strong>Meditar e imaginar la resurrección</strong><span>Jugraj pensaba en el día en que volvería a ver a su papá y en cómo sería ese encuentro.</span></div>
-            <div class="plain-step"><strong>Mantener la rutina espiritual</strong><span>Reuniones, predicación y adoración en familia ayudaron a Harman a manejar lo que sentía.</span></div>
+            <div class="plain-step"><strong>Meditar en la resurrección</strong><span>Jugraj pensaba en el día en que volvería a ver a su papá y en cómo sería ese encuentro.</span></div>
+            <div class="plain-step"><strong>Mantener la rutina espiritual</strong><span>Las reuniones, la predicación y la adoración en familia ayudaron a Harman a manejar lo que sentía.</span></div>
           </div>
         </article>`;
     }
-    const timelineCard=$('.timeline')?.closest('.interactive-card');
-    if(timelineCard&&s6.contains(timelineCard)){
-      timelineCard.innerHTML=`
-        <h3>Videopostal: Chipre</h3>
-        <p>La obra comenzó de forma humilde y siguió adelante a pesar de muchas dificultades.</p>
-        <div class="timeline">
-          <div class="time-item"><span class="time-year">1924</span><p>Cyrus Charalambous volvió de Estados Unidos con publicaciones y empezó a enviarlas desde Nicosia.</p></div>
-          <div class="time-item"><span class="time-year">Década de 1930</span><p>Se formó la primera congregación en Xylophagou.</p></div>
-          <div class="time-item"><span class="time-year">1947–1948</span><p>Llegó Antonios Karandinos. Un año después había 59 publicadores y se abrió una sucursal.</p></div>
-          <div class="time-item"><span class="time-year">Hoy</span><p>Hay más de 3 200 publicadores en 39 congregaciones y 14 grupos, y se sirve en 14 idiomas.</p></div>
-        </div>`;
-    }
+
+    const timelineCard=$('.timeline',s6)?.closest('.interactive-card');
+    timelineCard?.remove();
 
     const verseUpdates={
-      'Santiago 1:13': ['En el programa se explica que el dolor, el sufrimiento y la muerte no vienen de Jehová.','El versículo se menciona y se explica, pero no se lee completo.'],
-      'Juan 3:16': ['Brianne explica que este texto la ayudó a sentir que Jehová entregó a su Hijo también por ella.','El versículo se menciona y se explica, pero no se lee completo.'],
-      'Apocalipsis 21:4': ['Brianne lo relaciona con la esperanza de volver a ver a sus seres queridos.','El versículo se menciona y se explica, pero no se lee completo.'],
-      'Salmo 34:18': ['Jehová está cerca de los que tienen el corazón destrozado.','En el programa se cita esta idea del versículo.'],
-      'Mateo 10:29-31': ['Se venden dos gorriones por una moneda de poco valor, ¿no es cierto? Sin embargo, ni uno de ellos cae a tierra sin que su Padre lo sepa.','En el cierre del programa se cita esta parte del pasaje.']
+      'Santiago 1:13':['En el programa se explica que el dolor, el sufrimiento y la muerte no vienen de Jehová.','El versículo se menciona y se explica, pero no se lee completo en la transcripción.'],
+      'Juan 3:16':['Brianne explica que sintió este texto como algo personal: Jehová entregó a su Hijo unigénito por ella.','El versículo se comenta, pero no se lee completo en la transcripción.'],
+      'Apocalipsis 21:4':['Brianne habla de la promesa de volver a ver a sus seres queridos cuando Jehová los traiga de vuelta.','El versículo se menciona, pero no se lee completo en la transcripción.'],
+      'Salmo 34:18':['Brianne dice que este salmo muestra que Jehová está cerca de los que tienen el corazón destrozado.','El contenido se explica, pero el versículo no se lee completo en la transcripción.'],
+      'Mateo 10:29-31':['Se venden dos gorriones por una moneda de poco valor, ¿no es cierto? Sin embargo, ni uno de ellos cae a tierra sin que su Padre lo sepa.','En la conclusión del programa se cita esta parte del pasaje.']
     };
     $$('.verse-chip',s6).forEach(b=>{
-      const u=verseUpdates[b.dataset.title];
-      if(u){b.dataset.text=u[0];b.dataset.note=u[1];}
+      const v=verseUpdates[b.dataset.title];
+      if(v){b.dataset.text=v[0];b.dataset.note=v[1];}
     });
   }
 
-  // Convierte las seis secciones en persianas. Todas empiezan cerradas.
+  if(!$('#seccion-7')){
+    const sec=d.createElement('section');
+    sec.className='section';
+    sec.id='seccion-7';
+    sec.innerHTML=`
+      <div class="section-card">
+        <header class="section-header">
+          <div><span class="eyebrow">Sección 7</span><h2>Chipre</h2><p class="summary"></p></div>
+          <div class="section-number">7</div>
+        </header>
+        <article class="interactive-card cyprus-card">
+          <h3>La predicación en Chipre</h3>
+          <p>La videopostal repasa cómo empezó y cómo ha crecido la obra en la isla.</p>
+          <div class="timeline cyprus-timeline">
+            <div class="time-item"><span class="time-year">1924</span><p>Cyrus Charalambous volvió de Estados Unidos con publicaciones y empezó a enviarlas desde Nicosia.</p></div>
+            <div class="time-item"><span class="time-year">Década de 1930</span><p>Se formó la primera congregación en Xylophagou.</p></div>
+            <div class="time-item"><span class="time-year">1947–1948</span><p>Llegó Antonios Karandinos. Un año después había 59 publicadores y se abrió una sucursal.</p></div>
+            <div class="time-item"><span class="time-year">1960–1974</span><p>Hubo encarcelamientos por neutralidad y, en 1974, unos 300 hermanos tuvieron que dejar sus hogares debido a la guerra.</p></div>
+            <div class="time-item"><span class="time-year">Actualidad</span><p>Hay más de 3 200 publicadores en 39 congregaciones y 14 grupos, y se sirve en 14 idiomas.</p></div>
+          </div>
+          <div class="cyprus-today">
+            <strong>Pafos</strong>
+            <span>431 publicadores</span>
+            <span>5 congregaciones</span>
+            <span>3 grupos</span>
+            <span>7 idiomas</span>
+            <span>85 sirven a tiempo completo</span>
+          </div>
+        </article>
+      </div>`;
+    s6?.after(sec);
+  }
+
   const titleOverrides={
-    1:'Protejamos nuestra familia',
+    1:'El origen de la familia',
     2:'Ruth y Noemí',
     3:'La pizarra animada',
     4:'Sarah, Abenezer y Sophie',
     5:'Discurso',
-    6:'Sofonías y cómo sobrellevar el dolor'
+    6:'Sofonías y cómo sobrellevar el dolor',
+    7:'Chipre'
   };
+
   const items=$$('section.section');
   items.forEach((section,i)=>{
     const n=i+1;
@@ -286,7 +397,6 @@
     });
   });
 
-  // El viejo modal ya no se usa. Cada texto bíblico crea su propia tarjeta flotante.
   $('#modal-backdrop')?.remove();
   let z=300;
   let cardCount=0;
@@ -382,7 +492,8 @@
     $$('.floating-verse-card').forEach(card=>{
       const r=card.getBoundingClientRect();
       const [x,y]=keepInViewport(card,r.left,r.top);
-      card.style.left=`${x}px`;card.style.top=`${y}px`;
+      card.style.left=`${x}px`;
+      card.style.top=`${y}px`;
     });
   });
 
